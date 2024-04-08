@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Custom styles -->
+  <style>
+    /* Add your custom styles here */
+    .welcome-section {
+      background-color: #f8f9fa;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .login-form,
+    .register-form {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="welcome-section">
+          <h1>Welcome to Our Orogeny</h1>
+          <p>Please login or register to continue.</p>
+          <button class="btn btn-primary" id="loginBtn">Login</button>
+          <button class="btn btn-secondary" id="registerBtn">Register</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-3">
+        <div class="login-form">
+          <h2>Login</h2>
+          <form action="logInUserServlet" method="post">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+        <div class="register-form">
+          <h2>Register</h2>
+          <form  method="post" action="addServlet">
+            <div class="form-group">
+              <label for="newFirstName">First Name</label>
+              <input type="text" class="form-control" id="newFirstName" placeholder="Enter firstname">
+            </div>
+                <div class="form-group">
+              <label for="newLastName">Last Name</label>
+              <input type="text" class="form-control" id="newLastName" placeholder="Enter lastname">
+            </div>
+                <div class="form-group">
+              <label for="newEmail">Email</label>
+              <input type="email" class="form-control" id="newEmail" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="newPassword">Password</label>
+              <input type="password" class="form-control" id="newPassword" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-BwDY3XXm+J0je+kw6Mvfe2LcUP0LUxTZz9zn/A5B1B4zI+YGdA7FdRtxDZSpv6b1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script>
+    // Script to toggle between login and register forms
+    document.getElementById("loginBtn").addEventListener("click", function () {
+      document.querySelector(".login-form").style.display = "block";
+      document.querySelector(".register-form").style.display = "none";
+    });
+
+    document.getElementById("registerBtn").addEventListener("click", function () {
+      document.querySelector(".register-form").style.display = "block";
+      document.querySelector(".login-form").style.display = "none";
+    });
+  </script>
+</body>
+
+</html>
